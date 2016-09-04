@@ -9,6 +9,7 @@ import {
 import Bananas from './components/Bananas'
 import MainControls from './components/MainControls'
 import LocationDisplay from './components/LocationDisplay'
+import RunDisplay from './components/RunDisplay'
 
 
 class FitnessPaceSetter extends Component {
@@ -38,7 +39,7 @@ class FitnessPaceSetter extends Component {
           <Text style={styles.welcome}>
             Started
           </Text>
-          <Text>{this.state.sets}</Text>
+          <RunDisplay sets={this.state.sets} interval={this.state.interval} />
           <Text style={styles.button} onPress={() => this.setState({started: false})}>Stop</Text>
         </View>
       )
@@ -51,7 +52,6 @@ class FitnessPaceSetter extends Component {
           </Text>
           <Bananas />
           <MainControls onStart={this.onStart} />
-          <LocationDisplay />
         </View>
       )
     }
